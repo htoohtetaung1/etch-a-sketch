@@ -81,14 +81,21 @@ button {
 
 .canvas {
   border: #ff6b6c 3px solid;
+  box-sizing: content-box;
   display: flex;
   flex-wrap: wrap;
   border-radius: 9px;
   width: 800px;
   height: 800px;
   padding: 10px;
+  justify-content: center;
+  align-content: flex-start;
 }
 
 .block {
+  border: rgb(250, 250, 250) 1px solid;
+}
 
+.block:hover {
+  background-color: rgb(227, 227, 227);
 }
