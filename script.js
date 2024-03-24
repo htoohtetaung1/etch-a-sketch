@@ -15,6 +15,20 @@ function setSize() {
         blockCount = temp;
         resText.textContent = "Canvas resolution: " + blockCount + "x" + blockCount
         createCanvas(blockCount)
+        let blocks = document.querySelectorAll('.block')
+        blocks.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                console.log("entered")
+                element.style.backgroundColor = "red"
+                opacity = parseFloat(element.style.opacity);
+                opacity += 0.1;
+                console.log(element.style.opacity);
+                console.log(opacity)
+
+                element.style.opacity = opacity
+
+            })
+        });
     }
 }
 
@@ -28,7 +42,9 @@ function createCanvas(blocks) {
         div.style.height = bWidth + '%'
         div.classList.add('block')
         canvas.appendChild(div);
+        div.style.opacity = '0.1'
     }
+
     alert("canvas width = " + cWidth + " \nblock width = " + bWidth)
 }
 
