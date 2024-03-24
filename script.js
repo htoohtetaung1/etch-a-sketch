@@ -22,13 +22,18 @@ function setSize() {
                 element.style.backgroundColor = "red"
                 opacity = parseFloat(element.style.opacity);
                 opacity += 0.1;
-                console.log(element.style.opacity);
-                console.log(opacity)
-
+                
                 element.style.opacity = opacity
-
+                
             })
         });
+        let clearBtn = document.querySelector('.clearBtn')
+        clearBtn.addEventListener('click', () => {
+            blocks.forEach(element => {
+                element.style.backgroundColor = 'white'
+                element.style.opacity = '0'
+            })
+        })
     }
 }
 
@@ -42,9 +47,10 @@ function createCanvas(blocks) {
         div.style.height = bWidth + '%'
         div.classList.add('block')
         canvas.appendChild(div);
-        div.style.opacity = '0.1'
+        div.style.opacity = '0'
     }
 
     alert("canvas width = " + cWidth + " \nblock width = " + bWidth)
 }
+
 
